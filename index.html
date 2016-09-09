@@ -2,21 +2,49 @@
 <html>
 <head>
     <title>JSlider Playground</title>
+    <meta charset="utf-8">
     <style type="text/css">
         .container{
             position: relative;
             width: 640px;
             height: 360px;
             margin: auto;
+            font-size: 0;
+            overflow: hidden;
         }
-        .slider{width: 100%; height: 100%; }
+        .slide-wrapper {
+            position: relative;
+            height: 100%;
+        }
+        .slide{ width: 640px; height: 100%; display: inline-block;}
+        .slide-prev, .slide-next{
+            position: absolute;
+            top: 50%;
+            width: 17px;
+            height: 30px;
+            z-index: 999;
+            margin-top: -15px;
+            cursor: pointer;
+        }
+        .slide-prev {
+            background: url(imgs/arrows.png) no-repeat left top;
+            left: 10px;
+        }
+        .slide-next {
+            background: url(imgs/arrows.png) no-repeat left bottom;
+            right: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="slider" style="background:#111;"></div>
-        <div class="slider" style="background:#999;"></div>
-        <div class="slider" style="background:#eee;"></div>
+        <div class="slide-wrapper">
+            <div class="slide" style="background:#111;"></div>
+            <div class="slide" style="background:#999;"></div>
+            <div class="slide" style="background:#eee;"></div>
+        </div>
+        <div class="slide-prev"></div>
+        <div class="slide-next"></div>
     </div>
     <script type="text/javascript" src="jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="jslider.jquery.js"></script>
